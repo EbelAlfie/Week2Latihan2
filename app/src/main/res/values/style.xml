@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="buttons">
+        <item name="android:padding">@dimen/button_padding</item>
+        <item name="android:background">@drawable/background_button</item>
+    </style>
+</resources>
