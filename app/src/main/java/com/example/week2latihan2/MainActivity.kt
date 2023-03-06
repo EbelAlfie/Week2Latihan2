@@ -85,10 +85,14 @@ class MainActivity: AppCompatActivity() {
                     Toast.makeText(this, "Input tidak boleh kosong!", Toast.LENGTH_LONG).show()
                     return
                 }
-                val result = ExpressionBuilder(input).build()
-                currentNum = result.evaluate().toString()
-                tvHasil.text = currentNum
-                operator = true
+                try {
+                    val result = ExpressionBuilder(input).build()
+                    currentNum = result.evaluate().toString()
+                    tvHasil.text = currentNum
+                    operator = true
+                }catch (e:Exception) {
+                    Toast.makeText(this, "Error", Toast.LENGTH_LONG).show()
+                }
             }
         }
         tvKalkulasi.text = input
