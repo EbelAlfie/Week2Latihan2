@@ -13,7 +13,6 @@ class MainActivity: AppCompatActivity() {
     private lateinit var tvHasil: TextView
 
     private var input: String = ""
-    private var operatorOperand: MutableList<String> = mutableListOf()
     private var currentNum: String = ""
 
     private var operator = false
@@ -68,8 +67,6 @@ class MainActivity: AppCompatActivity() {
             }
             "+", "-", "/", "*", "%" -> {
                 if (!operator) return
-                operatorOperand.add(currentNum) //operand ditambahkan
-                operatorOperand.add(s) //operator ditambahkan
                 currentNum = ""
                 input += s
                 operator = false
@@ -78,7 +75,6 @@ class MainActivity: AppCompatActivity() {
                 input = ""
                 currentNum = ""
                 tvHasil.text = ""
-                operatorOperand.clear()
             }
             "=" -> {
                 if (input.isBlank()) {
